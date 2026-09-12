@@ -19,7 +19,12 @@ export class AppComponent implements OnInit {
   readonly instagramUrl = 'https://www.instagram.com/';
 
   ngOnInit(): void {
-    this.analytics.track('APP_OPENED');
+     const openedKey = 'app_opened';
+
+    if (!sessionStorage.getItem(openedKey)) {
+      sessionStorage.setItem(openedKey, 'true');
+      this.analytics.track('APP_OPENED');
+    }
   }
 
   start(): void {

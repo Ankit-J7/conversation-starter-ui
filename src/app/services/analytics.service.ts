@@ -25,11 +25,11 @@ export class AnalyticsService {
   private readonly API_URL = 'https://conversation-starter-service.onrender.com/api/events';
 
   getSessionId(): string {
-    let sessionId = localStorage.getItem(this.SESSION_KEY);
+    let sessionId = sessionStorage.getItem(this.SESSION_KEY);
 
     if (!sessionId) {
       sessionId = crypto.randomUUID();
-      localStorage.setItem(this.SESSION_KEY, sessionId);
+      sessionStorage.setItem(this.SESSION_KEY, sessionId);
     }
 
     return sessionId;
