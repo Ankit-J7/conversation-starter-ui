@@ -22,7 +22,7 @@ export class AnalyticsService {
    * Angular → http://localhost:4200
    * Spring Boot → http://localhost:8080
    */
-  private readonly API_URL = 'http://localhost:8080/api/events';
+  private readonly API_URL = 'https://conversation-starter-service.onrender.com/api/events';
 
   getSessionId(): string {
     let sessionId = localStorage.getItem(this.SESSION_KEY);
